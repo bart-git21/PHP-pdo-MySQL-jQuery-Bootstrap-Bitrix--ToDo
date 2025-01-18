@@ -27,10 +27,11 @@
             $.ajax({
                 url: "/ajax.php",
                 method: "POST",
+                contentType: "application/json",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                data: { id: taskId, action: toggle_task },
+                data: JSON.stringify({ id: taskId, action: toggle_task }),
                 beforeSend: function () {
                     $(this).prop('disabled', true);
                 },
@@ -46,10 +47,11 @@
             $.ajax({
                 url: "/ajax.php",
                 method: "DELETE",
+                contentType: "application/json",
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                 },
-                data: { id: taskId, action: delete_task },
+                data: JSON.stringify({ id: taskId, action: delete_task }),
                 beforeSend: function () {
                     $(this).prop("disabled", true);
                 },
