@@ -32,7 +32,7 @@
                     if (response.success) {
                         location.reload();
                     } else {
-                        console.error("Error: ", error);
+                        console.error("Error: ", response.message);
                     }
                 },
                 error: function (xhr, status, error) {
@@ -51,7 +51,7 @@
                     if (response.success) {
                         location.reload();
                     } else {
-                        console.error("Error: ", error);
+                        console.error("Error: ", response.message);
                     }
                 },
                 error: function (xhr, status, error) {
